@@ -1,0 +1,7 @@
+Live demo: https://ghl-makecom-deal-sync-demo.streamlit.app/
+
+Built a working simulation of the exact sync you described: a "deal won" event in GHL fans out to create the invoice, the project card, and the sheet row automatically. Check the "simulate a step failure" box in the demo and watch the retry kick in live, with a step-by-step log showing exactly what happened. There's a reverse-sync demo too, marking an invoice paid and syncing that back to GHL.
+
+For your actual build I'd deliver this as a live Make.com scenario (the tool you actually run), same retry and error-handling logic, plus A2P 10DLC registration and email domain setup. $190 fixed, within your posted range, 3-5 days to have it live against your real invoicing, project management, and Sheets accounts.
+
+Ready to start this week. Can you share API access to your invoicing and project management tools once we kick off, or do those need to be set up first?

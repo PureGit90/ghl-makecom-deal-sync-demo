@@ -5,7 +5,7 @@ from sync_pipeline import sync_deal_won, sync_payment_status_back
 st.set_page_config(page_title="Deal-Won Sync Pipeline", page_icon="🔄", layout="centered")
 
 st.title("Deal-Won Sync Pipeline")
-st.write("Simulates a GoHighLevel 'deal won' webhook fanning out to invoicing, project management, and Google Sheets — with retry logic and failure alerting on every step.")
+st.write("Simulates a GoHighLevel 'deal won' webhook fanning out to invoicing, project management, and Google Sheets -- with retry logic and failure alerting on every step.")
 
 st.divider()
 
@@ -37,7 +37,7 @@ if submitted:
     }
     for step in result["steps"]:
         icon = status_icons.get(step["status"], "•")
-        st.write(f"{icon} **{step['step']}** — {step['status'].replace('-', ' ')}")
+        st.write(f"{icon} **{step['step']}** -- {step['status'].replace('-', ' ')}")
 
     with st.expander("Full sync log", expanded=True):
         st.code("\n".join(result["sync_log"]), language=None)
@@ -55,7 +55,7 @@ if submitted:
         st.markdown("**Sheet Row**")
         st.json(records.get("sheet_row") or {"status": "not created"})
 
-    st.caption("Sample sync — connect your GoHighLevel and Make.com credentials for live automation.")
+    st.caption("Sample sync -- connect your GoHighLevel and Make.com credentials for live automation.")
 
     if records.get("invoice"):
         st.session_state["last_invoice_id"] = records["invoice"]["invoice_id"]
@@ -72,4 +72,4 @@ if st.button("Mark Invoice Paid"):
     confirmation = sync_payment_status_back(invoice_id_input, "Paid")
     st.success(confirmation["confirmation"])
     st.json(confirmation)
-    st.caption("Sample sync — connect your GoHighLevel and Make.com credentials for live automation.")
+    st.caption("Sample sync -- connect your GoHighLevel and Make.com credentials for live automation.")
